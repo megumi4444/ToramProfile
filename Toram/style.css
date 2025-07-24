@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url("assets/Kyou.png") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+.card {
+    width: 90vw;
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, #ffffffdd, #e7ecffcc);
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+    backdrop-filter: blur(12px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    animation: cardFadeIn 0.6s ease forwards;
+}
+
+.card:hover {
+    transform: scale(1.015);
+}
+
+@keyframes cardFadeIn {
+    from {
+        transform: scale(0.96);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+header .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header nav.hidden {
+    display: none;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #4675f2;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #2e54a5;
+}
+
+.profile {
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #4675f2;
+    margin-bottom: 10px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.name {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.quote {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.actions button {
+    background: #616161;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.actions button:hover {
+    background: #365bc0;
+}
+
+footer {
+    text-align: center;
+}
+
+.socials {
+    margin-top: 10px;
+}
+
+.socials a {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin: 0 6px;
+    transition: transform 0.3s;
+}
+
+.socials a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+}
+
+.credit {
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-top: 8px;
+    text-shadow: 0 0 2px #000;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Panel Senjata */
+.weapon-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    padding: 16px;
+    width: 85vw;
+    max-width: 480px;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(6px);
+}
+
+.weapon-display.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.weapon-display img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.weapon-display button {
+    background-color: #4675f2;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.weapon-display button:hover {
+    background-color: #365bc0;
+}
+
+.weapon-display img {
+    transition: transform 0.3s ease;
+}
+
+.weapon-display img:hover {
+    transform: scale(1.03);
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        max-width: 95vw;
+        padding: 15px;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .weapon-display img {
+        width: 90%;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+
+    .socials a {
+        font-size: 18px;
+        margin: 0 6px;
+    }
+
+    .credit {
+        font-size: 0.7rem;
+    }
+}

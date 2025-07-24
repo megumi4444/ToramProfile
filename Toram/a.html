@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ini profil ya</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Kartu Utama -->
+    <div class="card" id="home-card">
+        <header>
+            <div class="top-bar">
+                <h2>Toram Profile</h2>
+                <div class="menu" onclick="toggleMenu()">☰</div>
+            </div>
+            <nav id="nav" class="hidden">
+                <a href="#">Menu</a>
+                <a href="#">Galery</a>
+                <a href="#">Profile</a>
+                <a href="#">Home</a>
+            </nav>
+        </header>
+
+        <section class="profile">
+            <img src="assets/prof.png" alt="Aqua" class="avatar" />
+            <h3 class="name">Yuki • 周防</h3>
+            <p class="quote">"Halo Kak! makasih sudzh berkunjung, BTW Kak Aku Pemula Unggas."</p>
+        </section>
+
+        <section>
+            <h4 style="text-align:center; font-size: 1rem; margin-bottom: 8px; color:#333;">My Job</h4>
+        </section>
+
+        <section class="actions">
+            <button onclick="showWeapon('dsword')">⚔️ Dual Sword</button>
+            <button onclick="showWeapon('halberd')">🪓 Halberd</button>
+        </section>
+
+        <footer>
+            <div class="socials">
+                <a href="https://www.facebook.com/share/163YWa6889/" target="_blank" aria-label="Facebook">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                        alt="Facebook" width="24" height="24">
+                </a>
+                <a href="https://www.instagram.com/minaseinori__?igsh=MWVscmx1Y3c0cTlpZA==" target="_blank"
+                    aria-label="Instagram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                        width="24" height="24">
+                </a>
+                <a href="https://www.tiktok.com/@inoriminase02?_t=ZS-8yIfakEYEU4&_r=1" target="_blank"
+                    aria-label="TikTok">
+                    <img src="assets/tik.png" alt="TikTok" width="24" height="24">
+                </a>
+            </div>
+            <p class="credit">Edited by <strong>Rinnnn</strong></p>
+        </footer>
+
+    </div>
+
+    <!-- Panel Senjata -->
+    <div class="weapon-display hidden" id="weapon-display">
+        <img id="weapon-img" src="" alt="Weapon Preview" />
+        <button onclick="closeWeapon()">✖</button>
+    </div>
+</body>
+
+</html>
